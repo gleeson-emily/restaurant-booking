@@ -1,0 +1,24 @@
+{
+  "name": "restaurant-booking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server-config.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gleeson-emily/restaurant-booking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gleeson-emily/restaurant-booking/issues"
+  },
+  "homepage": "https://github.com/gleeson-emily/restaurant-booking#readme"
+}
