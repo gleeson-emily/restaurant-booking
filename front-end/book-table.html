@@ -10,30 +10,65 @@
             <div class="container">
               <h1 class="display-4">Welcome to Popular Restaurant!</h1>
               <p class="lead"> Reserve a Table</p>
-              <a href="index.html" class="btn btn-info">Home</a>
-              <a href="reserved.html" class="btn btn-info">Check Out The Waitlist!</a>
+              <a href="/" class="btn btn-info">Home</a>
+              <a href="/reserved" class="btn btn-info">Check Out The Waitlist!</a>
             </div>
           </div>
         <div class="container"> 
         <form>
             <div class="form-group">
-              <label for="ID">Your Unique ID</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="ID">
+              <label for="id">Your Unique ID</label>
+              <input type="text" class="form-control" id="form-id" placeholder="ID">
             </div>
             <div class="form-group">
               <label for="name">Your Name</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name">
+              <input type="text" class="form-control" id="form-name" placeholder="Name">
             </div>
             <div class="form-group">
                 <label for="phone">Phone number</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Phone">
+                <input type="text" class="form-control" id="form-phone" placeholder="Phone">
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email">
+                <input type="text" class="form-control" id="form-email" placeholder="Email">
               </div>
           </form>
-          <button type="submit" class="btn btn-info">Submit</button>
+          <button type="submit" class="btn btn-info" id="submit-booking">Submit</button>
         </div> 
+
+
+    <script type="text/javascript">
+        const formId = document.getElementById("form-id");
+        const formName = document.getElementById("form-name");
+        const formPhone = document.getElementById("form-phone");
+        const formEmail = document.getElementById("form-email");
+        const submitButton = document.getElementById("submit-booking");
+        const tables = []
+
+        submitButton.addEventListener("click", () => {
+            console.log(formId.value)
+            console.log(formName.value)
+            console.log(formPhone.value)
+            console.log(formEmail.value)
+
+          fetch(`api/book-table`, {
+            method: "GET",
+            headers: {
+            'Content-Type': 'application/json',
+          },
+          })   
+            .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+              booking = { id: formId.value, name: formName.value, phone: formPhone.value, email: formEmail.value} ;
+              data.push(booking);
+              console.log(data);
+              formId.value = "";
+              formPhone.value = "";
+              formName.value = "";
+              formEmail.value = "";
+      })
+    })
+    </script>    
     </body>
     </html>

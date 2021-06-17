@@ -19,62 +19,34 @@
                 Reserved Tables:
               </div>
             <div class="card">
-                <div class="card-body">
-                  table 1
+                <div class="card-body at-table">
                 </div>
                 </div>
-                <div class="card">
-                    <div class="card-body">
-                      table 2
-                    </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                          table 3
-                        </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                              table 4
-                            </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                  table 5
-                                </div>
-                                </div>
                                 <br>
 
         <div class="alert alert-info" role="alert">
             Waitlist:
           </div>
           <div class="card">
-            <div class="card-body">
-              table 1
+            <div class="card-body waiting">
+              
             </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                  table 2
-                </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                      table 3
-                    </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                          table 4
-                        </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                              table 5
-                            </div>
-                         </div>
+           
     </div>
- </div>
+    <script type="text/javascript">
+    fetch(`api/book-table`, {
+      method: "GET",
+      headers: {
+            'Content-Type': 'application/json',
+          },
+    })
+      .then((response), response.json())
+      .then(data => {
+        console.log(data);
+        
+      })
     
+    </script>
 </body>
 </html>
